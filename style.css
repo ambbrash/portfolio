@@ -1,0 +1,311 @@
+/* ============================
+   GENERAL STYLES
+============================ */
+body {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  border-radius: 12px;
+}
+
+/* ============================
+   HEADER / HERO
+============================ */
+header {
+  background: #f6ba40; /* darker yellow */
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1s forwards;
+}
+
+header p {
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s 0.5s forwards;
+}
+
+/* ============================
+   NAVIGATION
+============================ */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #dda73a;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color .3s, transform .3s;
+}
+
+nav a:hover {
+  color: #fceac6;
+  transform: scale(1.05);
+}
+
+/* ============================
+   SERVICES
+============================ */
+#services-banner {
+  width: 100%;
+  background: #c59533; /* dark yellow banner */
+  color: white;
+  overflow: hidden;
+  padding: 1rem 0;
+  text-align: center;
+  min-height: 120px;
+  position: relative;
+}
+
+.services-wrapper {
+  display: flex;
+  transition: transform 0.8s ease-in-out; /* smooth slide */
+}
+
+.service-slide {
+  flex: 0 0 100%; /* each slide takes full viewport width */
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.service-slide h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-slide p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+/* Optional: small fade-in animation */
+@keyframes fadeSlide {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+
+/* ============================
+   PORTFOLIO
+============================ */
+#portfolio {
+  background: #fff; /* white background */
+  margin-bottom: 1rem;
+}
+
+.portfolio-container {
+  max-height: 900px; /* scrollable if needed */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 1.5rem;
+}
+
+.project {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.overlay-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.overlay-container img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s;
+}
+
+.overlay-container:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: rgba(246, 166, 35, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.overlay-container:hover .overlay {
+  opacity: 1;
+}
+
+.project p {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ============================
+   CONTACT BUBBLE
+============================ */
+.contact {
+  text-align: center;
+  background: #dda73a; /* yellow bubble */
+  padding: 4rem 2rem;
+  margin: 1rem auto;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  color: #333;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.contact p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+    color: white;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.8rem 1rem;
+  border: 2px solid #f7c558;
+  border-radius: 8px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: #b37800;
+  box-shadow: 0 0 12px rgb(199, 133, 0));
+}
+
+.contact button {
+  padding: 0.8rem 1.5rem;
+  background: #c78500;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.contact button:hover {
+  background: #b37800;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(246, 166, 35, 0.6);
+}
+
+/* ============================
+   FOOTER
+============================ */
+footer {
+  background: #fff6d4;
+  color: #f6a623;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ============================
+   ANIMATIONS
+============================ */
+@keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+  .portfolio {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 2rem; }
+  .section { padding: 3rem 1rem; }
+  .overlay-container { height: 150px; }
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+}
